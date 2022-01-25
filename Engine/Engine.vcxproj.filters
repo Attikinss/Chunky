@@ -45,6 +45,7 @@
     <ClInclude Include="thirdparty\glad\include\vk_platform.h">
       <Filter>thirdparty\glad\include</Filter>
     </ClInclude>
+    <ClInclude Include="src\chunky\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\chunky\core\Application.cpp">
@@ -56,5 +57,6 @@
     <ClCompile Include="thirdparty\glad\src\vulkan.c">
       <Filter>thirdparty\glad\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\chunky\core\Window.cpp" />
   </ItemGroup>
 </Project>

@@ -8,10 +8,8 @@ namespace Chunky
 		Application() = default;
 		virtual ~Application() = default;
 
-		virtual void Initialise() = 0;
+		virtual bool Initialise() = 0;
 		virtual void Shutdown() = 0;
-	
-	protected:
 		virtual void Run() = 0;
 	};
 }

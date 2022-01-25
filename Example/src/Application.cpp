@@ -1,10 +1,17 @@
 #include "Application.h"
 
-void Application::Initialise()
+bool Application::Initialise()
 {
+	Chunky::WindowInfo info;
+	info.Title = "Example";
+	info.Width = 1280;
+	info.Height = 720;
+	info.IsFullscreen = false;
+	
+	m_Window = new Chunky::Window(info);
 	m_Running = true;
 
-	Run();
+	return true;
 }
 
 void Application::Run()
@@ -15,4 +22,5 @@ void Application::Run()
 void Application::Shutdown()
 {
 	m_Running = false;
+	delete m_Window;
 }

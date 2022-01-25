@@ -10,6 +10,10 @@ workspace "Chunky"
 
 output_directory = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
+thirdparty = {}
+thirdparty["glad"] = "Engine/thirdparty/glad"
+thirdparty["glfw"] = "Engine/thirdparty/glfw"
+
 project "Engine"
     location "Engine"
     kind "StaticLib"
@@ -24,11 +28,30 @@ project "Engine"
     {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp",
+
+        -- Third Party
+        "%{thirdparty.glad}/**.h",
+        "%{thirdparty.glad}/**.c"
     }
 
     includedirs
     {
 		"%{prj.name}/src",
+
+        -- Third Party
+        "%{thirdparty.glad}/include",
+        "%{thirdparty.glfw}/include",
+    }
+
+    libdirs
+    {
+        "%{thirdparty.glfw}/lib",
+    }
+
+    links
+    {
+        "glfw3_mt.lib",
+        "opengl32.lib",
     }
 
     filter "system:windows"

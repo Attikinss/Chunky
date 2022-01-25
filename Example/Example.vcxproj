@@ -89,16 +89,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Engine\Engine.vcxproj">
-      <Project>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</Project>
-    </ProjectReference>
+    <ClInclude Include="src\Application.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Application.h" />
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

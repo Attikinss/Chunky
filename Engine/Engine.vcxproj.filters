@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\chunky">
+      <UniqueIdentifier>{2E93C853-1A4B-0AA1-8352-E3FC6F29A591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\chunky\core">
+      <UniqueIdentifier>{6670F445-D2FB-610A-DB0C-E5FE4717BE0A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty">
+      <UniqueIdentifier>{50A5DA7C-3C5D-1CCA-A564-F525913BB7BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad">
+      <UniqueIdentifier>{574A7336-C3D5-E0FA-CCE6-63EF38F13CFB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad\include">
+      <UniqueIdentifier>{CAD8F482-3610-3D1A-3F1A-A13DABD06313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad\include\KHR">
+      <UniqueIdentifier>{3E3C0330-AA49-3116-3330-2D019F3CFDCC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad\include\glad">
+      <UniqueIdentifier>{11BA7A30-FD74-6ADC-A62C-E32692C6B46C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thirdparty\glad\src">
+      <UniqueIdentifier>{EE5B4A79-5ABD-2787-E32A-6E394F8B5E46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\chunky\core\Application.h">
+      <Filter>src\chunky\core</Filter>
+    </ClInclude>
+    <ClInclude Include="thirdparty\glad\include\KHR\khrplatform.h">
+      <Filter>thirdparty\glad\include\KHR</Filter>
+    </ClInclude>
+    <ClInclude Include="thirdparty\glad\include\glad\gl.h">
+      <Filter>thirdparty\glad\include\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="thirdparty\glad\include\glad\vulkan.h">
+      <Filter>thirdparty\glad\include\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="thirdparty\glad\include\vk_platform.h">
+      <Filter>thirdparty\glad\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\chunky\core\Application.cpp">
+      <Filter>src\chunky\core</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\glad\src\gl.c">
+      <Filter>thirdparty\glad\src</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\glad\src\vulkan.c">
+      <Filter>thirdparty\glad\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -10,6 +10,9 @@
     <Filter Include="src\chunky\core">
       <UniqueIdentifier>{6670F445-D2FB-610A-DB0C-E5FE4717BE0A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chunky\events">
+      <UniqueIdentifier>{7233F499-DE49-F22F-27C1-7D519316C3B7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="thirdparty">
       <UniqueIdentifier>{50A5DA7C-3C5D-1CCA-A564-F525913BB7BA}</UniqueIdentifier>
     </Filter>
@@ -32,6 +35,21 @@
   <ItemGroup>
     <ClInclude Include="src\chunky\core\Application.h">
       <Filter>src\chunky\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\core\Window.h">
+      <Filter>src\chunky\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\events\Event.h">
+      <Filter>src\chunky\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\events\KeyboardEvent.h">
+      <Filter>src\chunky\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\events\MouseEvent.h">
+      <Filter>src\chunky\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\events\WindowEvent.h">
+      <Filter>src\chunky\events</Filter>
     </ClInclude>
     <ClInclude Include="thirdparty\glad\include\KHR\khrplatform.h">
       <Filter>thirdparty\glad\include\KHR</Filter>

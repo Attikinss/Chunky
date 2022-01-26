@@ -56,7 +56,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>src;thirdparty\glad\include;thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;thirdparty\glad\include;thirdparty\glfw\include;thirdparty\SpdLog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -75,7 +75,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>src;thirdparty\glad\include;thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;thirdparty\glad\include;thirdparty\glfw\include;thirdparty\SpdLog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -97,6 +97,7 @@
   <ItemGroup>
     <ClInclude Include="src\chunky\core\Application.h" />
     <ClInclude Include="src\chunky\core\Defines.h" />
+    <ClInclude Include="src\chunky\core\Logger.h" />
     <ClInclude Include="src\chunky\core\Window.h" />
     <ClInclude Include="src\chunky\events\Event.h" />
     <ClInclude Include="src\chunky\events\KeyboardEvent.h" />
@@ -104,6 +105,7 @@
     <ClInclude Include="src\chunky\events\WindowEvent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\chunky\core\Logger.cpp" />
     <ClCompile Include="src\chunky\core\Window.cpp" />
     <ClCompile Include="thirdparty\glad\src\gl.c" />
     <ClCompile Include="thirdparty\glad\src\vulkan.c" />
@@ -111,4 +113,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project>
+</Project> 

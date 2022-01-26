@@ -13,6 +13,7 @@ output_directory = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 thirdparty = {}
 thirdparty["glad"] = "Engine/thirdparty/glad"
 thirdparty["glfw"] = "Engine/thirdparty/glfw"
+thirdparty["spdlog"] = "Engine/thirdparty/SpdLog"
 
 project "Engine"
     location "Engine"
@@ -40,6 +41,7 @@ project "Engine"
         -- Third Party
         "%{thirdparty.glad}/include",
         "%{thirdparty.glfw}/include",
+        "%{thirdparty.spdlog}/include",
     }
 
     libdirs
@@ -84,6 +86,9 @@ project "Example"
     {
 		"%{prj.name}/src",
         "Engine/src",
+
+        -- Third Party
+        "%{thirdparty.spdlog}/include",
     }
 
     links

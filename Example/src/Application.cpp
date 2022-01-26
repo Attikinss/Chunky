@@ -2,7 +2,7 @@
 #include "chunky/core/Defines.h"
 #include "chunky/events/WindowEvent.h"
 
-#include <iostream>
+#include "chunky/core/Logger.h"
 
 void Application::Run()
 {
@@ -23,6 +23,8 @@ void Application::Run()
 
 bool Application::Initialise()
 {
+	Chunky::Logger::Initialise("ENGINE");
+
 	Chunky::WindowInfo info;
 	info.Title = "Example";
 	info.Width = 1280;

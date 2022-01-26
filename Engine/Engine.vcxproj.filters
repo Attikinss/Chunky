@@ -30,6 +30,9 @@
     <ClInclude Include="src\chunky\core\Defines.h">
       <Filter>src\chunky\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\chunky\core\Logger.h">
+      <Filter>src\chunky\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\chunky\core\Window.h">
       <Filter>src\chunky\core</Filter>
     </ClInclude>
@@ -47,6 +50,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\chunky\core\Logger.cpp">
+      <Filter>src\chunky\core</Filter>
+    </ClCompile>
     <ClCompile Include="src\chunky\core\Window.cpp">
       <Filter>src\chunky\core</Filter>
     </ClCompile>

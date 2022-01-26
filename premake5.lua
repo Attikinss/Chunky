@@ -30,7 +30,6 @@ project "Engine"
         "%{prj.name}/src/**.cpp",
 
         -- Third Party
-        "%{thirdparty.glad}/**.h",
         "%{thirdparty.glad}/**.c"
     }
 

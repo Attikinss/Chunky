@@ -3,7 +3,9 @@
 #include "chunky/events/MouseEvent.h"
 #include "chunky/events/KeyboardEvent.h"
 #include "chunky/events/WindowEvent.h"
+
 #include "chunky/core/Defines.h"
+#include "chunky/core/Logger.h"
 
 #include <glad/gl.h>
 #include <glfw/glfw3.h>
@@ -82,8 +84,8 @@ namespace Chunky
 	void Window::HandleEvent(Event& evt)
 	{
 		Chunky::EventDispatcher dispatcher(evt);
-		dispatcher.Dispatch<Chunky::WindowMoveEvent>(BIND_FUNCTION(OnWindowMove));
-		dispatcher.Dispatch<Chunky::WindowResizeEvent>(BIND_FUNCTION(OnWindowResize));
+		dispatcher.Dispatch<Chunky::WindowMoveEvent>(BIND_FUNCTION_SCOPED(OnWindowMove));
+		dispatcher.Dispatch<Chunky::WindowResizeEvent>(BIND_FUNCTION_SCOPED(OnWindowResize));
 	}
 
 	void Window::SetCallbacks()

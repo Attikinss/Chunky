@@ -32,7 +32,7 @@ bool Application::Initialise()
 	info.IsFullscreen = false;
 	
 	m_Window = new Chunky::Window(info);
-	m_Window->SetWindowCallback(BIND_FUNCTION(HandleEvent));
+	m_Window->SetWindowCallback(BIND_FUNCTION_SCOPED(HandleEvent));
 	m_Running = true;
 
 	return true;
@@ -41,7 +41,7 @@ bool Application::Initialise()
 void Application::HandleEvent(Chunky::Event& evt)
 {
 	Chunky::EventDispatcher dispatcher(evt);
-	dispatcher.Dispatch<Chunky::WindowCloseEvent>(BIND_FUNCTION(OnWindowClose));
+	dispatcher.Dispatch<Chunky::WindowCloseEvent>(BIND_FUNCTION_SCOPED(OnWindowClose));
 
 	m_Window->HandleEvent(evt);
 }

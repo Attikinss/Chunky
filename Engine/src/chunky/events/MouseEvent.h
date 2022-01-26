@@ -31,8 +31,8 @@ namespace Chunky
 		std::pair<int, int> GetDelta() const { return { m_DeltaX, m_DeltaY }; }
 
 	private:
-		float m_PosX, m_PosY;
-		float m_DeltaX, m_DeltaY;
+		int m_PosX, m_PosY;
+		int m_DeltaX, m_DeltaY;
 	};
 
 	class MouseScrollEvent : public Event
@@ -55,7 +55,7 @@ namespace Chunky
 		std::pair<int, int> GetOffset() const { return { m_OffsetX, m_OffsetY }; }
 
 	private:
-		float m_OffsetX, m_OffsetY;
+		int m_OffsetX, m_OffsetY;
 	};
 
 	class MouseButtonEvent : public Event

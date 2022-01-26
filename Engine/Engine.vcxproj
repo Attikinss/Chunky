@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -96,18 +96,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\chunky\core\Application.h" />
+    <ClInclude Include="src\chunky\core\Defines.h" />
     <ClInclude Include="src\chunky\core\Window.h" />
     <ClInclude Include="src\chunky\events\Event.h" />
     <ClInclude Include="src\chunky\events\KeyboardEvent.h" />
     <ClInclude Include="src\chunky\events\MouseEvent.h" />
     <ClInclude Include="src\chunky\events\WindowEvent.h" />
-    <ClInclude Include="thirdparty\glad\include\KHR\khrplatform.h" />
-    <ClInclude Include="thirdparty\glad\include\glad\gl.h" />
-    <ClInclude Include="thirdparty\glad\include\glad\vulkan.h" />
-    <ClInclude Include="thirdparty\glad\include\vk_platform.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\chunky\core\Application.cpp" />
     <ClCompile Include="src\chunky\core\Window.cpp" />
     <ClCompile Include="thirdparty\glad\src\gl.c" />
     <ClCompile Include="thirdparty\glad\src\vulkan.c" />

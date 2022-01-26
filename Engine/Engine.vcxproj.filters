@@ -19,21 +19,15 @@
     <Filter Include="thirdparty\glad">
       <UniqueIdentifier>{574A7336-C3D5-E0FA-CCE6-63EF38F13CFB}</UniqueIdentifier>
     </Filter>
-    <Filter Include="thirdparty\glad\include">
-      <UniqueIdentifier>{CAD8F482-3610-3D1A-3F1A-A13DABD06313}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="thirdparty\glad\include\KHR">
-      <UniqueIdentifier>{3E3C0330-AA49-3116-3330-2D019F3CFDCC}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="thirdparty\glad\include\glad">
-      <UniqueIdentifier>{11BA7A30-FD74-6ADC-A62C-E32692C6B46C}</UniqueIdentifier>
-    </Filter>
     <Filter Include="thirdparty\glad\src">
       <UniqueIdentifier>{EE5B4A79-5ABD-2787-E32A-6E394F8B5E46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\chunky\core\Application.h">
+      <Filter>src\chunky\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chunky\core\Defines.h">
       <Filter>src\chunky\core</Filter>
     </ClInclude>
     <ClInclude Include="src\chunky\core\Window.h">
@@ -51,22 +45,9 @@
     <ClInclude Include="src\chunky\events\WindowEvent.h">
       <Filter>src\chunky\events</Filter>
     </ClInclude>
-    <ClInclude Include="thirdparty\glad\include\KHR\khrplatform.h">
-      <Filter>thirdparty\glad\include\KHR</Filter>
-    </ClInclude>
-    <ClInclude Include="thirdparty\glad\include\glad\gl.h">
-      <Filter>thirdparty\glad\include\glad</Filter>
-    </ClInclude>
-    <ClInclude Include="thirdparty\glad\include\glad\vulkan.h">
-      <Filter>thirdparty\glad\include\glad</Filter>
-    </ClInclude>
-    <ClInclude Include="thirdparty\glad\include\vk_platform.h">
-      <Filter>thirdparty\glad\include</Filter>
-    </ClInclude>
-    <ClInclude Include="src\chunky\core\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\chunky\core\Application.cpp">
+    <ClCompile Include="src\chunky\core\Window.cpp">
       <Filter>src\chunky\core</Filter>
     </ClCompile>
     <ClCompile Include="thirdparty\glad\src\gl.c">
@@ -75,6 +56,5 @@
     <ClCompile Include="thirdparty\glad\src\vulkan.c">
       <Filter>thirdparty\glad\src</Filter>
     </ClCompile>
-    <ClCompile Include="src\chunky\core\Window.cpp" />
   </ItemGroup>
 </Project>

@@ -6,11 +6,13 @@
 
 void Application::Run()
 {
-	if (!m_Running && !Initialise())
+	if (m_Running)
 	{
-		// TODO: error/exception handling
+		Chunky::Logger::Warn("Application already running !!!");
 		return;
 	}
+
+	m_Running = Initialise();
 
 	while (m_Running)
 	{

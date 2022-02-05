@@ -103,7 +103,9 @@
     <ClInclude Include="src\chunky\events\KeyboardEvent.h" />
     <ClInclude Include="src\chunky\events\MouseEvent.h" />
     <ClInclude Include="src\chunky\events\WindowEvent.h" />
+    <ClInclude Include="src\chunky\renderer\Batch.h" />
     <ClInclude Include="src\chunky\renderer\buffer\IndexBuffer.h" />
+    <ClInclude Include="src\chunky\renderer\Renderer.h" />
     <ClInclude Include="src\chunky\renderer\Vertex.h" />
     <ClInclude Include="src\chunky\renderer\buffer\VertexBuffer.h" />
     <ClInclude Include="src\chunky\renderer\buffer\VertexBufferLayout.h" />
@@ -112,7 +114,9 @@
   <ItemGroup>
     <ClCompile Include="src\chunky\core\Logger.cpp" />
     <ClCompile Include="src\chunky\core\Window.cpp" />
+    <ClCompile Include="src\chunky\renderer\Batch.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\IndexBUffer.cpp" />
+    <ClCompile Include="src\chunky\renderer\Renderer.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\chunky\renderer\VertexArray.cpp" />
     <ClCompile Include="thirdparty\glad\src\gl.c" />

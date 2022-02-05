@@ -34,12 +34,15 @@ namespace Chunky
 
 	VertexArray::VertexArray()
 	{
-
+		// Create and bind vertex array
+		glCreateVertexArrays(1, &m_ID);
+		glBindVertexArray(m_ID);
 	}
 
 	VertexArray::~VertexArray()
 	{
-
+		glDeleteVertexArrays(1, &m_ID);
+		m_ID = 0;
 	}
 
 	void VertexArray::Bind()

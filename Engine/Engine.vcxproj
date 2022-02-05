@@ -110,6 +110,18 @@
     <ClInclude Include="src\chunky\renderer\buffer\VertexBuffer.h" />
     <ClInclude Include="src\chunky\renderer\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\chunky\renderer\VertexArray.h" />
+    <ClInclude Include="src\math\Math.h" />
+    <ClInclude Include="src\math\matrix\Matrix3.h" />
+    <ClInclude Include="src\math\matrix\Matrix3f.h" />
+    <ClInclude Include="src\math\matrix\Matrix4.h" />
+    <ClInclude Include="src\math\matrix\Matrix4f.h" />
+    <ClInclude Include="src\math\vector\Vector2.h" />
+    <ClInclude Include="src\math\vector\Vector2f.h" />
+    <ClInclude Include="src\math\vector\Vector3.h" />
+    <ClInclude Include="src\math\vector\Vector3f.h" />
+    <ClInclude Include="src\math\vector\Vector3i.h" />
+    <ClInclude Include="src\math\vector\Vector4.h" />
+    <ClInclude Include="src\math\vector\Vector4f.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\chunky\core\Logger.cpp" />
@@ -119,6 +131,18 @@
     <ClCompile Include="src\chunky\renderer\Renderer.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\chunky\renderer\VertexArray.cpp" />
+    <ClCompile Include="src\math\Math.cpp" />
+    <ClCompile Include="src\math\matrix\Matrix3.cpp" />
+    <ClCompile Include="src\math\matrix\Matrix3f.cpp" />
+    <ClCompile Include="src\math\matrix\Matrix4.cpp" />
+    <ClCompile Include="src\math\matrix\Matrix4f.cpp" />
+    <ClCompile Include="src\math\vector\Vector4.cpp" />
+    <ClCompile Include="src\math\vector\Vector2.cpp" />
+    <ClCompile Include="src\math\vector\Vector2f.cpp" />
+    <ClCompile Include="src\math\vector\Vector3.cpp" />
+    <ClCompile Include="src\math\vector\Vector3f.cpp" />
+    <ClCompile Include="src\math\vector\Vector3i.cpp" />
+    <ClCompile Include="src\math\vector\Vector4f.cpp" />
     <ClCompile Include="thirdparty\glad\src\gl.c" />
     <ClCompile Include="thirdparty\glad\src\vulkan.c" />
   </ItemGroup>

@@ -4,6 +4,9 @@
 
 #include "chunky/core/Logger.h"
 
+#include "chunky/renderer/Renderer.h"
+
+
 void Application::Run()
 {
 	if (m_Running)
@@ -17,6 +20,11 @@ void Application::Run()
 	while (m_Running)
 	{
 		m_Window->PollEvents();
+
+		Chunky::Renderer::BeginFrame();
+
+		Chunky::Renderer::EndFrame();
+
 		m_Window->SwapBuffers();
 	}
 
@@ -37,6 +45,8 @@ bool Application::Initialise()
 	m_Window->SetWindowCallback(BIND_FUNCTION_SCOPED(HandleEvent));
 	m_Running = true;
 
+	Chunky::Renderer::Initialise();
+
 	return true;
 }
 
@@ -50,6 +60,7 @@ void Application::HandleEvent(Chunky::Event& evt)
 
 void Application::Shutdown()
 {
+	Chunky::Renderer::Shutdown();
 	delete m_Window;
 }
 

@@ -59,11 +59,6 @@ namespace Chunky
 		return true;
 	}
 
-	bool Batch::Add(const std::initializer_list<Vertex>& vertices)
-	{
-		return Add(vertices);
-	}
-
 	void Batch::Clear()
 	{
 		m_Vertices.clear();
@@ -87,7 +82,7 @@ namespace Chunky
 	void Batch::Render()
 	{
 		m_VAO->Bind();
-		glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+		glDrawArrays(GL_TRIANGLES, 0, (int)m_Vertices.size());
 		m_VAO->Unbind();
 	}
 

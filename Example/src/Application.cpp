@@ -23,29 +23,24 @@ void Application::Run()
 	/* -------- TEMPORARY -------- */
 
 	Chunky::Camera camera({ 1280.0f, 720.0f }, Chunky::Projection::Perspective);
+	camera.SetView(Matrix4f::Inverse(Matrix4f::Translate(Matrix4f(1.0f), { 0.0f, 0.0f, -5.0f })));
 
-	Chunky::Quad toFace = Chunky::Quad::Top;
-	Chunky::Quad boFace = Chunky::Quad::Bottom;
-	Chunky::Quad leFace = Chunky::Quad::Left;
-	Chunky::Quad riFace = Chunky::Quad::Right;
-	Chunky::Quad frFace = Chunky::Quad::Front;
-	Chunky::Quad baFace = Chunky::Quad::Back;
-	std::vector<Chunky::Vertex> toVerts = toFace.ToVertexData();
-	std::vector<Chunky::Vertex> boVerts = boFace.ToVertexData();
-	std::vector<Chunky::Vertex> leVerts = leFace.ToVertexData();
-	std::vector<Chunky::Vertex> riVerts = riFace.ToVertexData();
-	std::vector<Chunky::Vertex> frVerts = frFace.ToVertexData();
-	std::vector<Chunky::Vertex> baVerts = baFace.ToVertexData();
+	std::vector<Chunky::Vertex> toFace = Chunky::Quad::TopFace().ToVertexData();
+	std::vector<Chunky::Vertex> boFace = Chunky::Quad::BottomFace().ToVertexData();
+	std::vector<Chunky::Vertex> leFace = Chunky::Quad::LeftFace().ToVertexData();
+	std::vector<Chunky::Vertex> riFace = Chunky::Quad::RightFace().ToVertexData();
+	std::vector<Chunky::Vertex> frFace = Chunky::Quad::FrontFace().ToVertexData();
+	std::vector<Chunky::Vertex> baFace = Chunky::Quad::BackFace().ToVertexData();
 
 	std::vector<Chunky::Vertex> vertices;
-	vertices.insert(vertices.end(), toVerts.begin(), toVerts.end());
-	vertices.insert(vertices.end(), boVerts.begin(), boVerts.end());
-	vertices.insert(vertices.end(), leVerts.begin(), leVerts.end());
-	vertices.insert(vertices.end(), riVerts.begin(), riVerts.end());
-	vertices.insert(vertices.end(), frVerts.begin(), frVerts.end());
-	vertices.insert(vertices.end(), baVerts.begin(), baVerts.end());
+	vertices.insert(vertices.end(), toFace.begin(), toFace.end());
+	vertices.insert(vertices.end(), boFace.begin(), boFace.end());
+	vertices.insert(vertices.end(), leFace.begin(), leFace.end());
+	vertices.insert(vertices.end(), riFace.begin(), riFace.end());
+	vertices.insert(vertices.end(), frFace.begin(), frFace.end());
+	vertices.insert(vertices.end(), baFace.begin(), baFace.end());
 
-	Chunky::Batch batch(144);
+	Chunky::Batch batch(144*2);
 	batch.Add(vertices);
 
 	/* --------------------------- */

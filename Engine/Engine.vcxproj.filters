@@ -107,5 +107,6 @@
     <ClCompile Include="src\math\matrix\Matrix3f.cpp" />
     <ClCompile Include="src\math\matrix\Matrix4f.cpp" />
     <ClCompile Include="src\chunky\renderer\Camera.cpp" />
+    <ClCompile Include="src\chunky\renderer\Quad.cpp" />
   </ItemGroup>
 </Project>

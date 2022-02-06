@@ -136,6 +136,7 @@
     <ClCompile Include="src\chunky\renderer\Camera.cpp" />
     <ClCompile Include="src\chunky\renderer\gl\GLState.cpp" />
     <ClCompile Include="src\chunky\renderer\gl\GLStateManager.cpp" />
+    <ClCompile Include="src\chunky\renderer\Quad.cpp" />
     <ClCompile Include="src\chunky\renderer\Renderer.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\chunky\renderer\Shader.cpp" />

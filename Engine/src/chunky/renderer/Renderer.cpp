@@ -101,8 +101,7 @@ namespace Chunky
 
 		static float rot = 0.0f;
 		rot -= 1.0f;
-		Matrix4f model = Matrix4f::Translate(Matrix4f(1.0f), { 0.0f, 0.0f, 1.5f })
-			* Matrix4f::Rotate(Matrix4f(1.0f), Math::Deg2Rad * rot, { (float)Math::Sin(rot * 0.01), 1.0f, (float)Math::Sin(rot * 0.01) });
+		Matrix4f model = Matrix4f::Rotate(Matrix4f(1.0f), Math::Deg2Rad * rot, { (float)Math::Sin(rot * 0.01), 1.0f, (float)Math::Sin(rot * 0.01) });
 
 		/* --------------------------- */
 

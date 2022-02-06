@@ -106,6 +106,8 @@
     <ClInclude Include="src\chunky\renderer\Batch.h" />
     <ClInclude Include="src\chunky\renderer\buffer\IndexBuffer.h" />
     <ClInclude Include="src\chunky\renderer\Camera.h" />
+    <ClInclude Include="src\chunky\renderer\gl\GLState.h" />
+    <ClInclude Include="src\chunky\renderer\gl\GLStateManager.h" />
     <ClInclude Include="src\chunky\renderer\Quad.h" />
     <ClInclude Include="src\chunky\renderer\Renderer.h" />
     <ClInclude Include="src\chunky\renderer\Shader.h" />
@@ -132,6 +134,8 @@
     <ClCompile Include="src\chunky\renderer\Batch.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\IndexBUffer.cpp" />
     <ClCompile Include="src\chunky\renderer\Camera.cpp" />
+    <ClCompile Include="src\chunky\renderer\gl\GLState.cpp" />
+    <ClCompile Include="src\chunky\renderer\gl\GLStateManager.cpp" />
     <ClCompile Include="src\chunky\renderer\Renderer.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\chunky\renderer\Shader.cpp" />

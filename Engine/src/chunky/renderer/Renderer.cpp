@@ -4,6 +4,8 @@
 #include "chunky/renderer/Camera.h"
 #include "chunky/renderer/Shader.h"
 
+#include "gl/GLStateManager.h"
+
 #include <glad/gl.h>
 #include <glfw/glfw3.h>
 
@@ -41,10 +43,12 @@ namespace Chunky
 		s_Initialised = true;
 		s_Data = new RendererData();
 
+		GLStateManager::EnableDepthTest();
+		GLStateManager::EnableCull();
+		GLStateManager::CullFace(CullMode::BACK);
+
 		// Dump info
 		Logger::Trace("Renderer Initialised...");
-		Logger::Info("OpenGL Info:\n\tVersion: {0}\n\tVendor: {1}\n\tDevice: {2}",
-			glGetString(GL_VERSION), glGetString(GL_VENDOR), glGetString(GL_RENDERER));
 	}
 
 	void Renderer::Shutdown()
@@ -96,8 +100,8 @@ namespace Chunky
 		/* -------- TEMPORARY -------- */
 
 		static float rot = 0.0f;
-		rot += 1.0f;
-		Matrix4f model = Matrix4f::Translate(Matrix4f(1.0f), { 0.0f, 0.0f, -1.5f })
+		rot -= 1.0f;
+		Matrix4f model = Matrix4f::Translate(Matrix4f(1.0f), { 0.0f, 0.0f, 1.5f })
 			* Matrix4f::Rotate(Matrix4f(1.0f), Math::Deg2Rad * rot, { (float)Math::Sin(rot * 0.01), 1.0f, (float)Math::Sin(rot * 0.01) });
 
 		/* --------------------------- */

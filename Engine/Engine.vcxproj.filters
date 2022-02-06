@@ -48,6 +48,8 @@
     <ClInclude Include="src\chunky\events\WindowEvent.h">
       <Filter>src\chunky\events</Filter>
     </ClInclude>
+    <ClInclude Include="src\chunky\renderer\gl\GLStateManager.h" />
+    <ClInclude Include="src\chunky\renderer\gl\GLState.h" />
     <ClInclude Include="src\chunky\renderer\Renderer.h" />
     <ClInclude Include="src\chunky\renderer\Quad.h" />
     <ClInclude Include="src\chunky\renderer\Vertex.h" />
@@ -84,6 +86,8 @@
     <ClCompile Include="thirdparty\glad\src\vulkan.c">
       <Filter>thirdparty\glad\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\chunky\renderer\gl\GLState.cpp" />
+    <ClCompile Include="src\chunky\renderer\gl\GLStateManager.cpp" />
     <ClCompile Include="src\chunky\renderer\Renderer.cpp" />
     <ClCompile Include="src\math\Math.cpp" />
     <ClCompile Include="src\chunky\renderer\Batch.cpp" />

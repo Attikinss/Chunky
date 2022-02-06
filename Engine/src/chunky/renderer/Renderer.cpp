@@ -6,9 +6,6 @@
 
 #include "gl/GLStateManager.h"
 
-#include <glad/gl.h>
-#include <glfw/glfw3.h>
-
 namespace Chunky
 {
 	struct RendererData
@@ -85,8 +82,8 @@ namespace Chunky
 
 		s_Data->CameraProjection = camera.GetViewProjection();
 
-		glClear(GL_COLOR_BUFFER_BIT);
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		GLStateManager::SetClearColour(0.1f, 0.1f, 0.1f, 1.0f);
+		GLStateManager::Clear();
 	}
 
 	void Renderer::EndFrame()

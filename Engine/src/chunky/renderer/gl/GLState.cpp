@@ -14,9 +14,5 @@ namespace Chunky
             glEnable(m_State);
         else
             glDisable(m_State);
-        
-        // TODO: Implement state funcs
-        GL_COLOR_LOGIC_OP;
-        GL_TEXTURE_CUBE_MAP_SEAMLESS;
     }
 }

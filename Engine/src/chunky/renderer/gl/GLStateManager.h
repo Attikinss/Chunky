@@ -24,11 +24,8 @@ namespace Chunky
 		static void BlendFuncSeparate(SrcFactor srcRgb, DestFactor destRgb, SrcFactor srcAlpha, DestFactor destAlpha);
 		static void BlendFuncSeparate(int srcRgb, int destRgb, int srcAlpha, int destAlpha);
 
+		static void Clear();
+		static void SetClearColour(float r, float g, float b, float a = 1.0f);
 		static void InfoDump();
-
-	private:
-		static GLCullState k_CullState;
-		static GLBlendState k_BlendState;
-		static GLDepthState k_DepthState;
 	};
 }

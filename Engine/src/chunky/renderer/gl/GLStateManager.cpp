@@ -1,22 +1,30 @@
 #include "GLStateManager.h"
 #include "chunky/core/Logger.h"
 
+#include "math/vector/Vector4f.h"
+
 #include <glad/gl.h>
 
 namespace Chunky
 {
-	GLCullState GLStateManager::k_CullState;
-	GLBlendState GLStateManager::k_BlendState;
-	GLDepthState GLStateManager::k_DepthState;
+	struct GLStateInfo
+	{
+		GLCullState CullState;
+		GLBlendState BlendState;
+		GLDepthState DepthState;
+		Vector4f ClearColour;
+	};
+
+	static GLStateInfo s_StateInfo;
 
 	void GLStateManager::EnableCull()
 	{
-		k_CullState.Enable();
+		s_StateInfo.CullState.Enable();
 	}
 
 	void GLStateManager::DisableCull()
 	{
-		k_CullState.Disable();
+		s_StateInfo.CullState.Disable();
 	}
 
 	void GLStateManager::CullFace(CullMode mode)
@@ -26,18 +34,18 @@ namespace Chunky
 
 	void GLStateManager::CullFace(int mode)
 	{
-		k_CullState.Mode = mode;
+		s_StateInfo.CullState.Mode = mode;
 		glCullFace(mode);
 	}
 
 	void GLStateManager::EnableDepthTest()
 	{
-		k_CullState.Enable();
+		s_StateInfo.DepthState.Enable();
 	}
 
 	void GLStateManager::DisableDepthTest()
 	{
-		k_CullState.Disable();
+		s_StateInfo.DepthState.Disable();
 	}
 
 	void GLStateManager::DepthFunc(DepthFunction func)
@@ -47,30 +55,30 @@ namespace Chunky
 
 	void GLStateManager::DepthFunc(int func)
 	{
-		if (func == k_DepthState.Func)
+		if (func == s_StateInfo.DepthState.Func)
 			return;
 
-		k_DepthState.Func = func;
+		s_StateInfo.DepthState.Func = func;
 		glDepthFunc(func);
 	}
 
 	void GLStateManager::DepthMask(bool mask)
 	{
-		if (mask == k_DepthState.Mask)
+		if (mask == s_StateInfo.DepthState.Mask)
 			return;
 
-		k_DepthState.Mask = mask;
+		s_StateInfo.DepthState.Mask = mask;
 		glDepthMask(mask);
 	}
 
 	void GLStateManager::EnableBlend()
 	{
-		k_CullState.Enable();
+		s_StateInfo.CullState.Enable();
 	}
 
 	void GLStateManager::DisableBlend()
 	{
-		k_CullState.Disable();
+		s_StateInfo.CullState.Disable();
 	}
 
 	void GLStateManager::BlendFunc(SrcFactor srcRgb, DestFactor destRgb)
@@ -80,11 +88,11 @@ namespace Chunky
 
 	void GLStateManager::BlendFunc(int srcRgb, int destRgb)
 	{
-		if (srcRgb == k_BlendState.SrcRGB && destRgb == k_BlendState.DestRGB)
+		if (srcRgb == s_StateInfo.BlendState.SrcRGB && destRgb == s_StateInfo.BlendState.DestRGB)
 			return;
 
-		k_BlendState.SrcRGB = srcRgb;
-		k_BlendState.DestRGB = destRgb;
+		s_StateInfo.BlendState.SrcRGB = srcRgb;
+		s_StateInfo.BlendState.DestRGB = destRgb;
 
 		glBlendFunc(srcRgb, destRgb);
 	}
@@ -96,16 +104,31 @@ namespace Chunky
 
 	void GLStateManager::BlendFuncSeparate(int srcRgb, int destRgb, int srcAlpha, int destAlpha)
 	{
-		if (srcRgb == k_BlendState.SrcRGB && destRgb == k_BlendState.DestRGB &&
-			srcAlpha == k_BlendState.SrcAlpha && destAlpha == k_BlendState.DestAlpha)
+		if (srcRgb == s_StateInfo.BlendState.SrcRGB && destRgb == s_StateInfo.BlendState.DestRGB &&
+			srcAlpha == s_StateInfo.BlendState.SrcAlpha && destAlpha == s_StateInfo.BlendState.DestAlpha)
 			return;
 
-		k_BlendState.SrcRGB = srcRgb;
-		k_BlendState.DestRGB = destRgb;
-		k_BlendState.SrcAlpha = srcAlpha;
-		k_BlendState.DestAlpha = destAlpha;
+		s_StateInfo.BlendState.SrcRGB = srcRgb;
+		s_StateInfo.BlendState.DestRGB = destRgb;
+		s_StateInfo.BlendState.SrcAlpha = srcAlpha;
+		s_StateInfo.BlendState.DestAlpha = destAlpha;
 
 		glBlendFuncSeparate(srcRgb, destRgb, srcAlpha, destAlpha);
+	}
+
+	void GLStateManager::Clear()
+	{
+		int flags = GL_COLOR_BUFFER_BIT;
+		if (s_StateInfo.DepthState.IsEnabled())
+			flags |= GL_DEPTH_BUFFER_BIT;
+
+		glClear(flags);
+	}
+
+	void GLStateManager::SetClearColour(float r, float g, float b, float a)
+	{
+		s_StateInfo.ClearColour = { r, g, b, a };
+		glClearColor(r, g, b, a);
 	}
 
 	void GLStateManager::InfoDump()

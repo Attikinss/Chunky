@@ -101,6 +101,8 @@ namespace Chunky
         void Disable() { SetEnabled(false); }
         void SetEnabled(bool enabled);
 
+        bool IsEnabled() const { return m_Enabled; }
+
     private:
         const int m_State;
         bool m_Enabled;

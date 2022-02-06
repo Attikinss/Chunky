@@ -4,7 +4,9 @@
 
 #include "chunky/core/Logger.h"
 
+#include "chunky/renderer/Batch.h"
 #include "chunky/renderer/Renderer.h"
+#include "chunky/renderer/Quad.h"
 
 
 void Application::Run()
@@ -17,11 +19,17 @@ void Application::Run()
 
 	m_Running = Initialise();
 
+	Chunky::Quad bFace = Chunky::Quad::Front;
+	Chunky::Batch batch(96);
+	batch.Add({ bFace.ToVertexData() });
+
 	while (m_Running)
 	{
 		m_Window->PollEvents();
 
 		Chunky::Renderer::BeginFrame();
+
+		batch.SubmitToRenderer();
 
 		Chunky::Renderer::EndFrame();
 

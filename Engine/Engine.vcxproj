@@ -105,6 +105,7 @@
     <ClInclude Include="src\chunky\events\WindowEvent.h" />
     <ClInclude Include="src\chunky\renderer\Batch.h" />
     <ClInclude Include="src\chunky\renderer\buffer\IndexBuffer.h" />
+    <ClInclude Include="src\chunky\renderer\Quad.h" />
     <ClInclude Include="src\chunky\renderer\Renderer.h" />
     <ClInclude Include="src\chunky\renderer\Shader.h" />
     <ClInclude Include="src\chunky\renderer\Vertex.h" />

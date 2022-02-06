@@ -88,6 +88,8 @@ namespace Chunky
 
 	void Batch::SubmitToRenderer()
 	{
+		unsigned int size = (unsigned int)m_Vertices.size() * sizeof(Vertex);
+		m_VAO->GetVertexBuffers()[0]->SetData(size, m_Vertices.data());
 		Renderer::Submit(*this);
 	}
 }

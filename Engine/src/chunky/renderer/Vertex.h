@@ -13,7 +13,7 @@ namespace Chunky
 		Vertex InvertZ()
 		{
 			Vertex result = *this;
-			result.Position.x *= -1.0f;
+			result.Position.z *= -1.0f;
 			return result;
 		}
 	};

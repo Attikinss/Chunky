@@ -49,6 +49,7 @@
       <Filter>src\chunky\events</Filter>
     </ClInclude>
     <ClInclude Include="src\chunky\renderer\Renderer.h" />
+    <ClInclude Include="src\chunky\renderer\Quad.h" />
     <ClInclude Include="src\chunky\renderer\Vertex.h" />
     <ClInclude Include="src\math\vector\Vector3.h" />
     <ClInclude Include="src\math\vector\Vector3i.h" />

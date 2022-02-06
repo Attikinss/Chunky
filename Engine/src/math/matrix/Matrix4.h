@@ -287,6 +287,7 @@ struct Matrix4
 		this->Value[0] = other[0];
 		this->Value[1] = other[1];
 		this->Value[2] = other[2];
+		this->Value[3] = other[3];
 		return *this;
 	}
 
@@ -295,6 +296,7 @@ struct Matrix4
 		this->Value[0] += other[0];
 		this->Value[1] += other[1];
 		this->Value[2] += other[2];
+		this->Value[3] += other[3];
 		return *this;
 	}
 
@@ -303,6 +305,7 @@ struct Matrix4
 		this->Value[0] -= other[0];
 		this->Value[1] -= other[1];
 		this->Value[2] -= other[2];
+		this->Value[3] -= other[3];
 		return *this;
 	}
 
@@ -311,6 +314,7 @@ struct Matrix4
 		this->Value[0] *= scalar;
 		this->Value[1] *= scalar;
 		this->Value[2] *= scalar;
+		this->Value[3] *= scalar;
 		return *this;
 	}
 
@@ -324,6 +328,7 @@ struct Matrix4
 		this->Value[0] /= scalar;
 		this->Value[1] /= scalar;
 		this->Value[2] /= scalar;
+		this->Value[3] /= scalar;
 		return *this;
 	}
 
@@ -337,6 +342,7 @@ struct Matrix4
 		this->Value[0]++;
 		this->Value[1]++;
 		this->Value[2]++;
+		this->Value[3]++;
 		return *this;
 	}
 
@@ -345,6 +351,7 @@ struct Matrix4
 		this->Value[0]--;
 		this->Value[1]--;
 		this->Value[2]--;
+		this->Value[3]--;
 		return *this;
 	}
 
@@ -378,19 +385,19 @@ struct Matrix4
 
 	Vector4& operator[](int index)
 	{
-		// TODO: Add clamping or ASSERT(index >= 0 && index < 3);
+		// TODO: Add clamping or ASSERT(index >= 0 && index < 4);
 		return Value[index];
 	}
 
 	const Vector4& operator[](int index) const
 	{
-		// TODO: Add clamping or ASSERT(index >= 0 && index < 3);
+		// TODO: Add clamping or ASSERT(index >= 0 && index < 4);
 		return Value[index];
 	}
 
 	bool operator==(const Matrix4& other)
 	{
-		return (this->Value[0] == other[0]) && (this->Value[1] == other[1]) && (this->Value[2] == other[2]);
+		return (this->Value[0] == other[0]) && (this->Value[1] == other[1]) && (this->Value[2] == other[2]) && (this->Value[3] == other[3]);
 	}
 
 	bool operator!=(const Matrix4& other)

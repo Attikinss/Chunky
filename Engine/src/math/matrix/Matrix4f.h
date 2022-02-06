@@ -287,6 +287,7 @@ struct Matrix4f
 		this->Value[0] = other[0];
 		this->Value[1] = other[1];
 		this->Value[2] = other[2];
+		this->Value[3] = other[3];
 		return *this;
 	}
 
@@ -295,6 +296,7 @@ struct Matrix4f
 		this->Value[0] += other[0];
 		this->Value[1] += other[1];
 		this->Value[2] += other[2];
+		this->Value[3] += other[3];
 		return *this;
 	}
 
@@ -303,6 +305,7 @@ struct Matrix4f
 		this->Value[0] -= other[0];
 		this->Value[1] -= other[1];
 		this->Value[2] -= other[2];
+		this->Value[3] -= other[3];
 		return *this;
 	}
 
@@ -311,6 +314,7 @@ struct Matrix4f
 		this->Value[0] *= scalar;
 		this->Value[1] *= scalar;
 		this->Value[2] *= scalar;
+		this->Value[3] *= scalar;
 		return *this;
 	}
 
@@ -324,6 +328,7 @@ struct Matrix4f
 		this->Value[0] /= scalar;
 		this->Value[1] /= scalar;
 		this->Value[2] /= scalar;
+		this->Value[3] /= scalar;
 		return *this;
 	}
 
@@ -337,6 +342,7 @@ struct Matrix4f
 		this->Value[0]++;
 		this->Value[1]++;
 		this->Value[2]++;
+		this->Value[3]++;
 		return *this;
 	}
 
@@ -345,6 +351,7 @@ struct Matrix4f
 		this->Value[0]--;
 		this->Value[1]--;
 		this->Value[2]--;
+		this->Value[3]--;
 		return *this;
 	}
 

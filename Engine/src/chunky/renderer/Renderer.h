@@ -3,6 +3,7 @@
 namespace Chunky
 {
 	class Batch;
+	class Camera;
 
 	class Renderer
 	{
@@ -11,7 +12,7 @@ namespace Chunky
 		static void Shutdown();
 		static void Submit(const Batch& batch);
 
-		static void BeginFrame();
+		static void BeginFrame(const Camera& camera);
 		static void EndFrame();
 	};
 }

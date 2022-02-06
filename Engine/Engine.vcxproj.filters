@@ -69,6 +69,7 @@
     <ClInclude Include="src\math\vector\Vector2f.h" />
     <ClInclude Include="src\math\matrix\Matrix3f.h" />
     <ClInclude Include="src\math\matrix\Matrix4f.h" />
+    <ClInclude Include="src\chunky\renderer\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\chunky\core\Logger.cpp">
@@ -101,5 +102,6 @@
     <ClCompile Include="src\math\matrix\Matrix4.cpp" />
     <ClCompile Include="src\math\matrix\Matrix3f.cpp" />
     <ClCompile Include="src\math\matrix\Matrix4f.cpp" />
+    <ClCompile Include="src\chunky\renderer\Camera.cpp" />
   </ItemGroup>
 </Project>

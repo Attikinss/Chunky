@@ -5,6 +5,7 @@
 #include "chunky/core/Logger.h"
 
 #include "chunky/renderer/Batch.h"
+#include "chunky/renderer/Camera.h"
 #include "chunky/renderer/Renderer.h"
 #include "chunky/renderer/Quad.h"
 
@@ -19,15 +20,41 @@ void Application::Run()
 
 	m_Running = Initialise();
 
-	Chunky::Quad bFace = Chunky::Quad::Front;
-	Chunky::Batch batch(96);
-	batch.Add({ bFace.ToVertexData() });
+	/* -------- TEMPORARY -------- */
+
+	Chunky::Camera camera({ 1280.0f, 720.0f }, Chunky::Projection::Perspective);
+
+	Chunky::Quad toFace = Chunky::Quad::Top;
+	Chunky::Quad boFace = Chunky::Quad::Bottom;
+	Chunky::Quad leFace = Chunky::Quad::Left;
+	Chunky::Quad riFace = Chunky::Quad::Right;
+	Chunky::Quad frFace = Chunky::Quad::Front;
+	Chunky::Quad baFace = Chunky::Quad::Back;
+	std::vector<Chunky::Vertex> toVerts = toFace.ToVertexData();
+	std::vector<Chunky::Vertex> boVerts = boFace.ToVertexData();
+	std::vector<Chunky::Vertex> leVerts = leFace.ToVertexData();
+	std::vector<Chunky::Vertex> riVerts = riFace.ToVertexData();
+	std::vector<Chunky::Vertex> frVerts = frFace.ToVertexData();
+	std::vector<Chunky::Vertex> baVerts = baFace.ToVertexData();
+
+	std::vector<Chunky::Vertex> vertices;
+	vertices.insert(vertices.end(), toVerts.begin(), toVerts.end());
+	vertices.insert(vertices.end(), boVerts.begin(), boVerts.end());
+	vertices.insert(vertices.end(), leVerts.begin(), leVerts.end());
+	vertices.insert(vertices.end(), riVerts.begin(), riVerts.end());
+	vertices.insert(vertices.end(), frVerts.begin(), frVerts.end());
+	vertices.insert(vertices.end(), baVerts.begin(), baVerts.end());
+
+	Chunky::Batch batch(144);
+	batch.Add(vertices);
+
+	/* --------------------------- */
 
 	while (m_Running)
 	{
 		m_Window->PollEvents();
 
-		Chunky::Renderer::BeginFrame();
+		Chunky::Renderer::BeginFrame(camera);
 
 		batch.SubmitToRenderer();
 

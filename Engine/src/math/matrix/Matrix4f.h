@@ -224,7 +224,7 @@ struct Matrix4f
 		Matrix4f result(matrix);
 		result[3] = matrix[0] * vector[0] +
 					matrix[1] * vector[1] +
-					matrix[2] * vector[2] +
+					matrix[2] * -vector[2] +
 					matrix[3];
 
 		return result;

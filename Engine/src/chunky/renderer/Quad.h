@@ -46,19 +46,24 @@ namespace Chunky
 			Vertices[3].Normal = normal;
 		}
 
-		std::vector<Vertex> ToVertexData()
+		std::vector<Vertex> ToVertexData(bool zInvert = false)
 		{
-			Vertex inverted0 = Vertices[0].InvertZ();
-			Vertex inverted1 = Vertices[1].InvertZ();
-			Vertex inverted2 = Vertices[2].InvertZ();
-			Vertex inverted3 = Vertices[3].InvertZ();
+			if (zInvert)
+			{
+				Vertex inverted0 = Vertices[0].InvertZ();
+				Vertex inverted1 = Vertices[1].InvertZ();
+				Vertex inverted2 = Vertices[2].InvertZ();
+				Vertex inverted3 = Vertices[3].InvertZ();
 
-			return std::vector<Vertex>({ inverted0, inverted1, inverted2, inverted2, inverted3, inverted0 });
+				return std::vector<Vertex>({ inverted0, inverted1, inverted2, inverted2, inverted3, inverted0 });
+			}
+
+			return std::vector<Vertex>({ Vertices[0], Vertices[1], Vertices[2], Vertices[2], Vertices[3], Vertices[0] });
 		}
 	};
 
 	Quad const Quad::Top	= { { -0.5f,  0.5f, -0.5f }, { -0.5f,  0.5f,  0.5f }, {  0.5f,  0.5f,  0.5f }, {  0.5f,  0.5f, -0.5f } };
-	Quad const Quad::Bottom = { {  0.5f, -0.5f,  0.5f }, {  0.5f, -0.5f, -0.5f }, { -0.5f, -0.5f, -0.5f }, { -0.5f, -0.5f,  0.5f } };
+	Quad const Quad::Bottom = { { -0.5f, -0.5f, -0.5f }, {  0.5f, -0.5f, -0.5f }, {  0.5f, -0.5f,  0.5f }, { -0.5f, -0.5f,  0.5f } };
 	Quad const Quad::Left	= { { -0.5f, -0.5f,  0.5f }, { -0.5f,  0.5f,  0.5f }, { -0.5f,  0.5f, -0.5f }, { -0.5f, -0.5f, -0.5f } };
 	Quad const Quad::Right	= { {  0.5f, -0.5f, -0.5f }, {  0.5f,  0.5f, -0.5f }, {  0.5f,  0.5f,  0.5f }, {  0.5f, -0.5f,  0.5f } };
 	Quad const Quad::Front	= { { -0.5f, -0.5f, -0.5f }, { -0.5f,  0.5f, -0.5f }, {  0.5f,  0.5f, -0.5f }, {  0.5f, -0.5f, -0.5f } };

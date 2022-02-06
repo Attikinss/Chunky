@@ -59,6 +59,7 @@
     <ClInclude Include="src\chunky\renderer\buffer\VertexBufferLayout.h" />
     <ClInclude Include="src\chunky\renderer\buffer\IndexBuffer.h" />
     <ClInclude Include="src\chunky\renderer\VertexArray.h" />
+    <ClInclude Include="src\chunky\renderer\Shader.h" />
     <ClInclude Include="src\math\vector\Vector4.h" />
     <ClInclude Include="src\math\matrix\Matrix4.h" />
     <ClInclude Include="src\math\matrix\Matrix3.h" />
@@ -87,6 +88,7 @@
     <ClCompile Include="src\chunky\renderer\buffer\VertexBuffer.cpp" />
     <ClCompile Include="src\chunky\renderer\buffer\IndexBUffer.cpp" />
     <ClCompile Include="src\chunky\renderer\VertexArray.cpp" />
+    <ClCompile Include="src\chunky\renderer\Shader.cpp" />
     <ClCompile Include="src\math\vector\Vector4.cpp" />
     <ClCompile Include="src\math\vector\Vector2.cpp" />
     <ClCompile Include="src\math\vector\Vector2f.cpp" />

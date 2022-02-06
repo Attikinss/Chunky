@@ -1,6 +1,7 @@
 #include "Renderer.h"
 #include "chunky/core/Logger.h"
 #include "chunky/renderer/Batch.h"
+#include "chunky/renderer/Shader.h"
 
 #include <glad/gl.h>
 #include <glfw/glfw3.h>
@@ -10,6 +11,17 @@ namespace Chunky
 	struct RendererData
 	{
 		std::vector<Batch> m_Batches;
+		Shader* TestShader = nullptr;
+
+		RendererData()
+		{
+			TestShader = new Shader("assets/shaders/basic.glsl");
+		}
+
+		~RendererData()
+		{
+			delete TestShader;
+		}
 	};
 
 	static bool s_Initialised = false;
@@ -63,6 +75,9 @@ namespace Chunky
 			Logger::Warn("Renderer isn't active !!!");
 			return;
 		}
+
+		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	}
 
 	void Renderer::EndFrame()
@@ -73,8 +88,12 @@ namespace Chunky
 			return;
 		}
 
+		s_Data->TestShader->Bind();
+
 		for (auto batch : s_Data->m_Batches)
 			batch.Render();
+
+		s_Data->TestShader->Unbind();
 
 		s_Data->m_Batches.clear();
 	}

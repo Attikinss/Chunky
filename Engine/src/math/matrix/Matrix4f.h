@@ -183,7 +183,7 @@ struct Matrix4f
 		const float cos = (float)Math::Cos(angle);
 		const float sin = (float)Math::Sin(angle);
 
-		Vector3f axis = vec.GetNormalised();
+		Vector3f axis = vec.GetNormalised() * -1.0f;
 		Vector3f temp((1.0f - cos) * axis);
 
 		Matrix4f rotation;
